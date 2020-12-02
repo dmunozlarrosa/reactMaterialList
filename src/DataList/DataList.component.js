@@ -23,6 +23,7 @@ import {
   IconButton
 } from "@material-ui/core";
 
+const myBackgroundColor = "rgba(255,255,255,0.7)";
 const useStyles = makeStyles((theme) => {
   return {
     title : {
@@ -35,7 +36,8 @@ const useStyles = makeStyles((theme) => {
     },
     paper: {
       // marginBottom: theme.spacing(2),
-      background: "rgba(255,255,255,0.6)",
+      // background: "rgba(255,255,255,0.6)",
+      // background: "rgba(255,255,255,0.6)",
       borderRadius: "2px 2px 5px 5px",
       borderTop: `5px solid rgba(${hexToRgb(
         theme.palette.primary.main.toString()
@@ -181,10 +183,10 @@ export default function DataList(props) {
       }
     });
   }
-
+  const backgroundColor = props.backgroundColor?props.backgroundColor:myBackgroundColor;
   return (
     <div className={classes.root}>
-      <Paper className={classes.paper}>
+      <Paper className={classes.paper} style={{backgroundColor:backgroundColor}}>
         <TableContainer style={{ maxHeight: 550, paddingTop: 5 }}>
           <Table
             className={classes.table}
