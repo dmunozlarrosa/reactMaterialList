@@ -10,7 +10,8 @@ const cropsData = {
         en: "Crop",
         es: "Cultivo",
         pt: "Cultivo"
-      }
+      },
+      width:"20%"
     },
     {
       id: "percent",
@@ -20,8 +21,8 @@ const cropsData = {
         es: "%",
         pt: "%"
       },
-      width: "25%",
-      myType: "_percentBar"
+      // width: "25%",
+      myType: "percentBar"
     },
     {
       id: "has",
@@ -48,35 +49,35 @@ const cropsData = {
     {
       selectedValues: "corn",
       name: "Corn",
-      percent: { value: 5, color: "#FFFFFF" },
+      percent: { value: 5, color: "#88FF2F" },
       has: 3.7,
       fields: 2
     },
     {
       selectedValues: "soybean",
       name: "Soybean",
-      percent: { value: 52, color: "#AAFFFF" },
+      percent: { value: 12, color: "#AAFFFF" },
       has: 25.0,
       fields: 12
     },
     {
       selectedValues: "rise",
       name: "Rise",
-      percent: { value: 62, color: "#11FFFF" },
+      percent: { value: 32, color: "#11FFFF" },
       has: 16.0,
       fields: 8
     },
     {
       selectedValues: "soybean2do",
       name: "Soybean 2do",
-      percent: { value: 59, color: "#FF11FF" },
+      percent: { value: 59, color: "#0F11FF" },
       has: 6.0,
       fields: 16
     },
     {
       selectedValues: "potato",
       name: "Potato",
-      percent: { value: 56, color: "#FFFF11" },
+      percent: { value: 5.3, color: "#0FFF11" },
       has: 16.0,
       fields: 5
     }
@@ -93,7 +94,7 @@ const farmsData = {
         es: "Establecimiento",
         pt: "Estabelecimento"
       },
-      width: "40px"
+      // width: "30%"
     },
     {
       id: "crops",
@@ -103,8 +104,8 @@ const farmsData = {
         es: "Cultivo",
         pt: "Cultivo"
       },
-      width: "50%",
-      myType: "_circleColor"
+      // width: "20%",
+      myType: "circleColor"
     },
     {
       id: "has",
@@ -114,7 +115,7 @@ const farmsData = {
         es: "Has",
         pt: "Has"
       },
-      width: "40px"
+      width: "10px"
     },
     {
       id: "percent",
@@ -124,7 +125,7 @@ const farmsData = {
         es: "%",
         pt: "%"
       },
-      width: "40px"
+      width: "10px"
     },
     {
       id: "fieldsAmount",
@@ -134,12 +135,12 @@ const farmsData = {
         es: "Lotes",
         pt: "Lotes"
       },
-      width: "40px"
+      width: "10px"
     }
   ],
   rows: [
     {
-      selectedValues: "Margarita",
+      selectedValues: "margarita",
       name: "Margarita",
       percent: 23,
       has: 87.1,
@@ -226,7 +227,7 @@ const userData = {
         es: "Titulo",
         pt: "Titulo"
       },
-      myType: "_link"
+      myType: "link"
     },
     {
       id: "link_dash",
@@ -236,7 +237,8 @@ const userData = {
         es: "Tablero Datos",
         pt: "Tablero Datos"
       },
-      myType: "_icons"
+      myType: "icons",
+      width : "50px"
     },
     {
       id: "user",
@@ -254,18 +256,20 @@ const userData = {
         en: "Date",
         es: "Fecha",
         pt: "Fecha"
-      }
+      },
+      width : "90px"
     },
-    // {
-    //   id: "state",
-    //   numeric: false,
-    //   label: {
-    //     en: "State",
-    //     es: "Estado",
-    //     pt: "Estado"
-    //   },
-    //   myType: "_label"
-    // },
+    {
+      id: "state",
+      numeric: false,
+      label: {
+        en: "State",
+        es: "Estado",
+        pt: "Estado"
+      },
+      myType: "label",
+      width : "110px"
+    },
     {
       id: "actions",
       numeric: false,
@@ -274,7 +278,8 @@ const userData = {
         es: "Acciones",
         pt: "Acciones"
       },
-      myType: "_icons"
+      myType: "icons",
+      width: "120px"
     }
   ],
   rows: [
@@ -283,11 +288,12 @@ const userData = {
       title: {
         value:
           "https://docs.google.com/document/d/1sG77EQR2BhGa1Ziz2AF-n0W5F_JVFoir4YiosPJJh8g/edit#",
-        label: "Bench - Trigo Inv"
+        label: "Bench - Trigo Inv 1"
       },
       link_dash: [<OpenInNew />],
       user: "dmunoz@geoagro.com",
       date: "30/11/2020",
+      state : "completed",
       // state: {
       //   text: "COMPLETADO",
       //   color: "success"
@@ -299,18 +305,106 @@ const userData = {
       title: {
         value:
           "https://docs.google.com/document/d/1sG77EQR2BhGa1Ziz2AF-n0W5F_JVFoir4YiosPJJh8g/edit#",
-        label: "Bench - Trigo Inv"
+        label: "Bench - Trigo Inv 2"
       },
       link_dash: [<OpenInNew />],
       user: "meid@geoagro.com",
       date: "03/10/2020",
+      state : "error",
       // state: {
       //   text: "ERROR",
       //   color: "error"
       // },
       actions: [<Cached />, <Delete />]
+    },
+    {
+      type: "BENCH",
+      title: {
+        value:
+          "https://docs.google.com/document/d/1sG77EQR2BhGa1Ziz2AF-n0W5F_JVFoir4YiosPJJh8g/edit#",
+        label: "Bench - Trigo Inv 3"
+      },
+      link_dash: [<OpenInNew />],
+      user: "bior@geoagro.com",
+      date: "03/08/2020",
+      state : "inProcess",
+      // state: {
+      //   text: "ERROR",
+      //   color: "error"
+      // },
+      actions: []
     }
   ]
 };
 
-export { cropsData, farmsData, userData };
+function getUserData(lang = "en"){
+  const state_map = {
+    completed: {
+      text: {
+        en: "COMPLETED",
+        es: "COMPLETADO",
+        pt: "COMPLETADO"
+      },
+      color: "success"
+    },
+    inProcess: {
+      text: {
+        en: "IN PROCESS",
+        es: "EN PROCESO",
+        pt: "EM PROCESSO"
+      },
+      color: "warning"
+    },
+    error: {
+      text: {
+        en: "ERROR",
+        es: "ERROR",
+        pt: "ERROR"
+      },
+      color: "error"
+    }
+  };
+  const userLangSet = {
+    ...userData, 
+    rows : userData.rows.map(x => {
+      let stateWithLang = 0; 
+      if (!x.state 
+          || !state_map[x.state]
+          || !state_map[x.state].text
+          || !state_map[x.state].text[lang]) 
+        stateWithLang = {text:'-', color:"error"};
+      if (!stateWithLang) 
+        stateWithLang = {
+          ...state_map[x.state],  
+          text : state_map[x.state].text[lang]          
+        }
+        return {
+        ...x, 
+        state: stateWithLang}}),
+    columns : userData.columns.map(x => {
+      return {
+        ...x, 
+        label : x.label[lang], 
+      }})
+  }
+  return userLangSet;
+}
+function getCropsData(lang = "en"){
+  const cropsLangSet = {
+    ...cropsData, 
+    columns: cropsData.columns.map(x => {return {...x, label : x.label[lang]}})
+  }
+  return cropsLangSet;
+}
+
+function getFarmsData(lang = "en"){
+  const farmsLangSet = {
+    ...farmsData, 
+    columns: farmsData.columns.map(x => {return {...x, label : x.label[lang]}})
+  }
+  return farmsLangSet;
+}
+
+export { getCropsData, getFarmsData, getUserData };
+
+
